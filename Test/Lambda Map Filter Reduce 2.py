@@ -1,24 +1,12 @@
-def mult_by_2(num):
-    return num * 2
-times_two = mult_by_2
+def random_func(name: str, age: int, weight: float) -> str:
+    print("Name :", name)
+    print("Age :", age)
+    print("Weight :", weight)
 
-print("8 * 2=", times_two(4))
+    return "{} is {} years old and weighs {}".format(name, age, weight)
 
-def do_math(func, num):
-    return func(num)
+print(random_func("Derek", 89, 165.5))
 
-print("8 * 2=", do_math(mult_by_2, 8))
+print(random_func(89, "Derek", "Turtler"))
 
-
-def get_func_mult_by_num(num):
-
-    def mult_by(value):
-        return num * value
-    return mult_by
-generated_fun = get_func_mult_by_num(5)
-
-print("5 * 10=", generated_fun(10))
-
-listOfFuncs = [times_two, generated_fun]
-
-print("5  * 9 =", listOfFuncs[1](9))
+print(random_func.__annotations__)
